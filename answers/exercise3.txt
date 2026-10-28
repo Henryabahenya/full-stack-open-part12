@@ -1,0 +1,10 @@
+Henry@henry-pc:~/PART_12$ docker run -it ubuntu
+root@a1b2c3d4e5f6:/# apt-get update
+root@a1b2c3d4e5f6:/# apt-get install -y nano
+root@a1b2c3d4e5f6:/# mkdir -p /usr/src/app
+root@a1b2c3d4e5f6:/# nano /usr/src/app/index.js
+root@a1b2c3d4e5f6:/# cat /usr/src/app/index.js
+console.log('Hello World')
+root@a1b2c3d4e5f6:/# exit
+exit
+Henry@henry-pc:~/PART_12$
