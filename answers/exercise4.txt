@@ -1,0 +1,13 @@
+Henry@henry-pc:~/PART_12$ docker run -it ubuntu
+root@577f21bb60a5:/# export DEBIAN_FRONTEND=noninteractive
+root@577f21bb60a5:/# apt-get update
+root@577f21bb60a5:/# apt-get install -y curl nano
+root@577f21bb60a5:/# curl -sL https://deb.nodesource.com/setup_24.x | bash
+root@577f21bb60a5:/# apt-get install -y nodejs
+root@577f21bb60a5:/# mkdir -p /usr/src/app
+root@577f21bb60a5:/# echo "console.log('Hello World')" > /usr/src/app/index.js
+root@577f21bb60a5:/# node /usr/src/app/index.js
+Hello World
+root@577f21bb60a5:/# exit
+exit
+Henry@henry-pc:~/PART_12$
