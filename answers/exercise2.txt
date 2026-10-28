@@ -1,0 +1,6 @@
+Henry@henry-pc:~/PART_12$ docker run -it ubuntu
+root@5e0bbb2bc03a:/# mkdir -p /usr/src/app
+root@5e0bbb2bc03a:/# touch /usr/src/app/index.js
+root@5e0bbb2bc03a:/# exit
+exit
+Henry@henry-pc:~/PART_12$
