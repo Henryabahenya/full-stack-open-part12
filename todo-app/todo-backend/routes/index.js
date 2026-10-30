@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const configs = require('../util/config')
+const { get } = require('../redis')
 
 let visits = 0
 
@@ -12,6 +13,14 @@ router.get('/', async (req, res) => {
   res.send({
     ...configs,
     visits
+  });
+});
+
+/* GET statistics metadata. */
+router.get('/statistics', async (req, res) => {
+  const addedTodos = await get('added_todos');
+  res.json({
+    added_todos: addedTodos ? parseInt(addedTodos, 10) : 0
   });
 });
 

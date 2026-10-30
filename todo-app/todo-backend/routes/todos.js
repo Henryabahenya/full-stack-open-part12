@@ -1,5 +1,6 @@
 const express = require('express');
 const { Todo } = require('../mongo');
+const { get, set } = require('../redis');
 const router = express.Router();
 
 /* GET todos listing. */
@@ -14,6 +15,16 @@ router.post('/', async (req, res) => {
     text: req.body.text,
     done: false
   });
+
+  // Increment added_todos counter in Redis
+  try {
+    const currentCount = await get('added_todos');
+    const count = currentCount ? parseInt(currentCount, 10) + 1 : 1;
+    await set('added_todos', String(count));
+  } catch (err) {
+    console.log('Redis increment error:', err);
+  }
+
   res.send(todo);
 });
 
