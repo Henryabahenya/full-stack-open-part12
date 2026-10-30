@@ -1,0 +1,4 @@
+Henry@henry-pc:~/PART_12/todo-app/todo-backend$ curl http://localhost:3000/
+{"REDIS_URL":"redis://redis:6379","visits":1}
+Henry@henry-pc:~/PART_12/todo-app/todo-backend$ curl http://localhost:3000/
+{"REDIS_URL":"redis://redis:6379","visits":2}
