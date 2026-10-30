@@ -1,0 +1,25 @@
+test> show collections
+todos
+test> db.todos.insertOne({ text: "Increase the number of tools in my tool belt", done: false })
+{
+  acknowledged: true,
+  insertedId: ObjectId('6ae463c4847a9e4ed998c76f')
+}
+test> db.todos.find({})
+[
+  {
+    _id: ObjectId('6ae461bbebba7434404c1f9d'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('6ae461bbebba7434404c1f9e'),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId('6ae463c4847a9e4ed998c76f'),
+    text: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
