@@ -1,0 +1,11 @@
+Henry@henry-pc:~/PART_12/todo-app/todo-backend$ docker build -t todo-backend .
+[+] Building 6.1s (10/10) FINISHED  docker:default
+ => [1/5] FROM docker.io/library/node:20
+ => [2/5] WORKDIR /usr/src/app
+ => [3/5] COPY package*.json ./
+ => [4/5] RUN npm ci
+ => [5/5] COPY . .
+ => exporting to image
+Henry@henry-pc:~/PART_12/todo-app/todo-backend$ docker run -p 3000:3000 todo-backend
+> todo-express-backend@0.0.0 start
+> node ./bin/www
