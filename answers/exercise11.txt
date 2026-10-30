@@ -1,0 +1,13 @@
+docker ps
+docker exec -it todo-backend-redis-1 redis-cli
+KEYS *
+GET added_todos
+SET added_todos 9001
+GET added_todos
+exit
+curl http://localhost:3000/statistics
+curl -X POST http://localhost:3000/todos -H "Content-Type: application/json" -d '{"text":"Checking Redis CLI counter increment"}'
+curl http://localhost:3000/statistics
+docker exec -it todo-backend-redis-1 redis-cli del added_todos
+curl -X POST http://localhost:3000/todos -H "Content-Type: application/json" -d '{"text":"Testing after key deletion"}'
+curl http://localhost:3000/statistics
