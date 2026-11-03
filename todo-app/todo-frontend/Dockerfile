@@ -1,9 +1,13 @@
-# --- Build Stage ---
+# --- Build & Test Stage ---
 FROM node:20-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
+
+# Run tests during the build process; fails build if tests fail
+RUN npm run test
+
 ARG VITE_BACKEND_URL
 ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
 RUN npm run build
