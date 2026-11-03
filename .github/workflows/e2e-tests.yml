@@ -18,9 +18,13 @@ jobs:
         with:
           node-version: 20
 
+      - name: Start production environment with Docker Compose
+        run: |
+          cd todo-app
+          docker compose up --build -d
+
       - name: Install dependencies and run E2E tests
         run: |
-          docker compose up -d
           cd todo-tests
           npm install
           npx playwright install --with-deps
